@@ -13,5 +13,9 @@ declare module 'styled-components' {
       lightMedium: string;
       lightUp: string;
     };
+    fonts: {
+      bold: string;
+      regular: string;
+    };
   }
 }

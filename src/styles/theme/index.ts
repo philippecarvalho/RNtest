@@ -10,4 +10,8 @@ export default {
     lightMedium: '#E6E6E6',
     lightUp: '#f2f2f2',
   },
+  fonts: {
+    bold: 'Poppins-Bold',
+    regular: 'Poppins-Regular',
+  },
 };
