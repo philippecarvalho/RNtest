@@ -28,37 +28,39 @@ export const RestaurantItem = () => {
         <S.Logo source={{uri: item.logo}} />
       </S.LogoContainer>
 
-      <S.Content>
-        <S.Name>{item.name}</S.Name>
+      <S.Scroll>
+        <S.Content>
+          <S.Name>{item.name}</S.Name>
 
-        <S.TextContainer>
-          <S.Title>Descrição</S.Title>
-          <S.Text>{item.description}</S.Text>
-        </S.TextContainer>
+          <S.TextContainer>
+            <S.Title>Descrição</S.Title>
+            <S.Text>{item.description}</S.Text>
+          </S.TextContainer>
 
-        <S.TextContainer>
-          <S.Title>Contato</S.Title>
-          <S.Text>{item.telephone}</S.Text>
-          <S.Text>{item.website}</S.Text>
-        </S.TextContainer>
+          <S.TextContainer>
+            <S.Title>Contato</S.Title>
+            <S.Text>{item.telephone}</S.Text>
+            <S.Text>{item.website}</S.Text>
+          </S.TextContainer>
 
-        <S.TextContainer>
-          <S.Title>Faixa de preço</S.Title>
-          <S.Text>{item.price_range}</S.Text>
-        </S.TextContainer>
+          <S.TextContainer>
+            <S.Title>Faixa de preço</S.Title>
+            <S.Text>{item.price_range}</S.Text>
+          </S.TextContainer>
 
-        <S.Divider />
+          <S.Divider />
 
-        <S.TextContainer>
-          <S.Title>Horários de Funcionamento</S.Title>
-          <S.Text>{item.opening_hours}</S.Text>
-        </S.TextContainer>
+          <S.TextContainer>
+            <S.Title>Horários de Funcionamento</S.Title>
+            <S.Text>{item.opening_hours}</S.Text>
+          </S.TextContainer>
 
-        <S.TextContainer>
-          <S.Title>Formas de pagamento</S.Title>
-          <S.Text>{item.payment_methods}</S.Text>
-        </S.TextContainer>
-      </S.Content>
+          <S.TextContainer>
+            <S.Title>Formas de pagamento</S.Title>
+            <S.Text>{item.payment_methods}</S.Text>
+          </S.TextContainer>
+        </S.Content>
+      </S.Scroll>
     </S.Container>
   );
 };

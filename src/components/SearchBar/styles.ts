@@ -17,7 +17,7 @@ export const SearchBar = styled.View`
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    padding: 10px;
+    padding: 0 10px;
   `}
 `;
 
@@ -26,13 +26,23 @@ export const Input = styled.TextInput`
     font-size: 14px;
     color: ${theme.colors.darkDown};
     font-family: ${theme.fonts.regular};
-    text-align: center;
     margin: 0 10px;
+    width: 100%;
   `}
 `;
 
-export const SearchTermWrapper = styled.View`
+export const SearchTermContainer = styled.View`
+  align-items: center;
+  flex-direction: row;
   margin-bottom: 20px;
+  flex: 1;
+  width: 100%;
+  padding: 0 10px;
+`;
+
+export const SearchTermTextWrapper = styled.View`
+  justify-content: center;
+  flex: 1;
 `;
 
 export const Title = styled.Text`

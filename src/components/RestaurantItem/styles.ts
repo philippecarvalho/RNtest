@@ -1,17 +1,23 @@
+import {NativeModules, Platform} from 'react-native';
 import styled, {css} from 'styled-components/native';
+const {StatusBarManager} = NativeModules;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 0 : StatusBarManager.HEIGHT;
 
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
 `;
 
-export const Content = styled.ScrollView`
-  padding: 40px 20px 20px 20px;
+export const Scroll = styled.ScrollView`
+  padding: 50px 20px 0 20px;
   margin-top: -60px;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   background-color: white;
-  flex: 1;
+`;
+
+export const Content = styled.View`
+  margin-bottom: 100px;
 `;
 
 export const ArrowBackContainer = styled.TouchableOpacity`
@@ -25,7 +31,7 @@ export const LogoContainer = styled.View`
   width: 120px;
   position: absolute;
   align-self: center;
-  top: 80px;
+  top: ${Platform.OS === 'ios' ? 80 : STATUSBAR_HEIGHT}px;
   z-index: 99;
 `;
 
