@@ -30,3 +30,27 @@ export const Input = styled.TextInput`
     margin: 0 10px;
   `}
 `;
+
+export const SearchTermWrapper = styled.View`
+  margin-bottom: 20px;
+`;
+
+export const Title = styled.Text`
+  ${({theme}) => css`
+    font-size: 14px;
+    color: ${theme.colors.darkUp};
+    font-family: ${theme.fonts.regular};
+    text-align: center;
+    margin: 0 10px;
+  `}
+`;
+
+export const SearchTerm = styled.Text`
+  ${({theme}) => css`
+    font-size: 15px;
+    color: ${theme.colors.darkDown};
+    font-family: ${theme.fonts.bold};
+    text-align: center;
+    margin: 0 10px;
+  `}
+`;

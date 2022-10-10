@@ -10,6 +10,13 @@ interface props {
 export const SearchBar: React.FC<props> = ({value, setValue}) => {
   return (
     <S.Container>
+      {value && (
+        <S.SearchTermWrapper>
+          <S.Title>Resultado para</S.Title>
+          <S.SearchTerm>{value}</S.SearchTerm>
+        </S.SearchTermWrapper>
+      )}
+
       <S.SearchBar>
         <SearchIcon />
         <S.Input
