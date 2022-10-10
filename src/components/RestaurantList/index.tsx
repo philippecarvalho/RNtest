@@ -23,7 +23,7 @@ export const RestaurantList = () => {
           columnWrapperStyle={{flex: 1, justifyContent: 'space-between'}}
           numColumns={2}
           data={data.data}
-          renderItem={ListItem}
+          renderItem={props => <ListItem {...props} />}
         />
       )}
     </S.Container>
