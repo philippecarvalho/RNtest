@@ -1,5 +1,5 @@
 import {FlatList} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useQuery} from '@tanstack/react-query';
 import {ListItem} from '../ListItem';
 import * as S from './styles';
@@ -7,7 +7,11 @@ import {SearchBar} from '../SearchBar';
 import {useDebounce} from '../../hooks/useDebounce';
 import {Loading} from '../Loading';
 
-export const RestaurantList = () => {
+interface props {
+  hideHeader: () => void;
+}
+
+export const RestaurantList: React.FC<props> = ({hideHeader}) => {
   const [value, setValue] = useState('');
   const debouncedFilter = useDebounce(value, 500);
 
@@ -34,6 +38,12 @@ export const RestaurantList = () => {
     async () => fetchProducts(debouncedFilter),
     {enabled: Boolean(debouncedFilter)},
   );
+
+  useEffect(() => {
+    if (value) {
+      hideHeader();
+    }
+  }, [hideHeader, value]);
 
   return (
     <S.Container>
