@@ -19,3 +19,9 @@ export const Title = styled.Text`
     margin-bottom: 15px;
   `}
 `;
+
+export const ItemsWrapper = styled.View`
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;

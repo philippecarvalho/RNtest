@@ -1,4 +1,3 @@
-import {FlatList} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useQuery} from '@tanstack/react-query';
 import {ListItem} from '../ListItem';
@@ -6,6 +5,7 @@ import * as S from './styles';
 import {SearchBar} from '../SearchBar';
 import {useDebounce} from '../../hooks/useDebounce';
 import {Loading} from '../Loading';
+import {RestaurantType} from '../../types';
 
 interface props {
   hideHeader: () => void;
@@ -53,12 +53,21 @@ export const RestaurantList: React.FC<props> = ({hideHeader}) => {
       {isFetching && <Loading />}
 
       {!isFetching && data && (
-        <FlatList
-          columnWrapperStyle={{flex: 1, justifyContent: 'space-between'}}
-          numColumns={2}
-          data={query ? query.data : data.data}
-          renderItem={props => <ListItem {...props} />}
-        />
+        <S.ItemsWrapper>
+          {query ? (
+            <>
+              {query.data.map((item: RestaurantType) => (
+                <ListItem key={item.id} item={item} />
+              ))}
+            </>
+          ) : (
+            <>
+              {data.data.map((item: RestaurantType) => (
+                <ListItem key={item.id} item={item} />
+              ))}
+            </>
+          )}
+        </S.ItemsWrapper>
       )}
     </S.Container>
   );
