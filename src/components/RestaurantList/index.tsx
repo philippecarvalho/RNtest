@@ -5,6 +5,7 @@ import {ListItem} from '../ListItem';
 import * as S from './styles';
 import {SearchBar} from '../SearchBar';
 import {useDebounce} from '../../hooks/useDebounce';
+import {Loading} from '../Loading';
 
 export const RestaurantList = () => {
   const [value, setValue] = useState('');
@@ -38,6 +39,8 @@ export const RestaurantList = () => {
     <S.Container>
       <SearchBar value={value} setValue={setValue} />
       <S.Title>Restaurantes</S.Title>
+
+      {isFetching && <Loading />}
 
       {!isFetching && data && (
         <FlatList
