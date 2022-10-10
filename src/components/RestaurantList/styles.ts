@@ -4,8 +4,8 @@ export const Container = styled.View`
   ${({theme}) => css`
     padding: 20px;
     margin-top: -40px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
     background-color: ${theme.colors.white};
     flex: 1;
   `}
